@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개구문 연습</title>
+</head>
+<body>
+    <script>
+        // 전개 구문
+        let arr1 = [10,20,30];
+        let arr2 = [50,60,70];
+
+        console.log(...arr1); // (...arr) == 10 20 30
+        console.log(arr1); // (arr) == [10,20,30]
+
+        let arr12 = [...arr1,...arr2]; // arr1 + arr2 = 10 20 30 40 50 60
+        let arr11 = [...arr1]; // arr1 을 복사 
+        console.log(arr1 === arr2); //false
+
+        // 함수에 배열의 요소를 인수로 전달할 때
+        function add(x, y, z) {
+            return x + y + z;
+        }
+        console.log(add(arr2[0], arr2[1], arr2[2])); // 180
+        console.log(add(...arr2)); // 180
+
+         // 구조 분해 할당(배열의 일부만 꺼내)
+        let numbers = [10,20,30,40];
+
+        // 배열 요소의 값을 변수에 할당하는 이전방식
+        var a1 = numbers[0]; // 10
+        var b1 = numbers[2]; // 30
+
+        // 구조분해 할당방식
+        let[a,,b] = numbers;
+        console.log(a,b); // 10,30
+
+        let userMap ={name:"홍길동", age:25};
+
+         // 배열 요소의 값을 변수에 할당하는 이전방식
+        let userName1 = userMap.name;
+        let userAge1 = userMap.age;
+
+        // 구조분해 할당방식
+        let{name, age} = userMap;
+
+        const users = {
+            "userA" : [50,60,70],
+            "userB" : [80,90,70],
+            "userC" : [75,80,90]
+        }
+        const {userA, userB} = users;
+        // userA = [50,60,70]
+        // userB = [80,90,70]
+
+        // 전개구문
+        const arr = [...userA, ...userB]; // 50,60,70,80,90,70
+
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]; // arr 배열의 모든 요소의 총합
+        }
+
+        document.write("userA와 userB의 점수의 총합 : ", sum)
+    </script>
+</body>
+</html>
