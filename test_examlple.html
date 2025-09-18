@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/example.js"></script>
+</head>
+<body>
+    <h1>Hello World!!</h1>
+    <script>
+        var age = prompt("당신의 나이는?", "0");
+        // var -> 
+        // prompt -> 입력받는 폼 (문자열,초기값)
+        if(age >= 20){
+            alert("성인 입니다!")
+            // 확인창만 뜸
+            document.write("당신은 성인입니다.<br>");
+        } else{
+            var confirmResult = confirm("미성년자가 맞나요?");
+            // 확인, 취소 창이 뜨고 확인 -> true / 취소 -> false 반환
+            document.write(confirmResult,"당신은 미성년자입니다.<br>");
+            // document -> 해당 웹 페이지 
+        }
+        var number1 = 100;
+        var string1 = "kor";
+        document.write(typeof number1, "<br>");
+        document.write(typeof string1, "<br>");
+
+        let name ="홍길동";
+        let str = `내이름은 ${name} 입니다. <br> 제 나이는 ${age} 입니다`; // 백틱 사용
+        
+        document.write(str ,"<br>");
+
+        var str2 = "<table border= '1'>";
+            str2 += "<tr>";
+                str2 += "<td>1</td><td>2</td><td>3</td>";
+                str2 += "</tr>";
+                str2 += "</table>";
+                document.write(str2);
+                // 123 테이블이 만들어짐 !
+        var num1 = 100;
+        var numString1 = "100";
+        document.write(num1 == numString1, "<br>"); // true
+        // == 숫자 타입 무시하고 비교 했을때 같으면 true
+        document.write(num1 === numString1, "<br>"); // false
+        // === 숫자 타입까지 체크해서 비교 했을때 같으면 true
+
+        var result1 = 100 > 50 ? "참입니다" : "거짓입니다";
+        // 삼항 조건 연산자 (조건식 ? true : false)
+        document.write(result1, "<br>");
+        
+        // for문
+        var arr =[10,20,30]; // int[] arr = {10,20,30};
+        for(var i= 0; i < arr.length; i++){
+            document.write(arr[i], "<br>");
+        }
+        document.write("↑ for문 ↓ 향상된 for문<br>");
+        // foreach
+        for(var i of arr){
+            document.write(i, "<br>");
+        }
+        for (var i in arr) {
+            document.write(i, "<br>");
+        }
+        
+    </script>
+</body>
+</html>
