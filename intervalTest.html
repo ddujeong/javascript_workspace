@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var addNum = 0;
+        var subNum = 1000;
+
+        var auto_1 = setInterval(function() {
+            addNum ++;
+            console.log("addNum : ", addNum);
+        }, 1000);
+        // 해당 함수를 1초마다 호출하기!
+    </script>
+    <!-- 자동 호출 함수를 정지 ! -->
+    <button onclick="clearInterval(auto_1)">정지 auto_1</button>
+</body>
+</html>

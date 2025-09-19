@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var osInfo = navigator.userAgent.toLocaleLowerCase();
+        console.log(osInfo);
+        // 접속한 유저의 브라우저 정보
+        // mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/140.0.0.0 safari/537.36
+
+        console.log(screen.width, screen.height);
+        // 접속한 유저의 해상도
+        // 1920 1080
+
+        console.log(location.href);
+        // 현재 접속한 유자가 보는 url 
+        // http://127.0.0.1:5500/webObjectTest.html
+
+        console.log("브라우저 이름 : ",navigator.appName);
+        // 브라우저 이름 :  Netscape
+
+        console.log("브라우저 언어 : ",navigator.language);
+        // 브라우저 언어 :  ko-KR
+
+        console.log("플랫폼 : ",navigator.platform);
+        // 플랫폼 :  Win32
+        
+        function goNaver() {
+            location.href="http://naver.com";
+        }
+        function goBack() {
+            history.back();
+        }
+        function goFoward(){
+            history.forward();
+        }
+    </script>
+    <button onclick="goNaver()">네이버</button>
+    <button onclick="goBack()">뒤로</button>
+    <button onclick="goFoward()">앞으로</button>
+</body>
+</html>
