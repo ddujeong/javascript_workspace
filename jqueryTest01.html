@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#hello").css("color","red").css("background-color","yellow");
+            // id => #
+            // 체이닝 기법  => .css().css();
+        });
+        $(function(){
+            $("*").css("border","1px solid blue");
+            // 전체 선택 => *
+        })
+        $(function(){
+            $(".tit").css("border","1px solid blue").css("background-color","pink");
+            // class => .
+        })
+        $(function(){
+            $("h3").css("border","1px solid blue").css("background-color","green");
+        })
+        $(function(){
+            $("#h4txt, h5").css("border","1px solid blue").css("background-color","gray");
+            // 중복 선택 가능
+        })
+        $(function(){
+            $("h1.h1class").css("border","1px solid blue").css("background-color","brown");
+            // 요소의 클래스 => 요소.클래스명
+        })
+        $(function(){
+            $("h1#h1txt").css("border","1px solid blue").css("background-color","gold");
+            // 요소의 아이디 => 요소#아이디명
+        })
+    </script>
+</head>
+<body>
+    <h1 id="hello">Hello World! 안녕하세요!</h1>
+    <h1 class="h1class">제이쿼리</h1>
+    <h2 class="tit">선택자</h2>
+    <h3>직접 선택자1</h3>
+    <h3>직접 선택자2</h3>
+    <h4 id="h4txt">직접 선택자3</h4>
+    <h5>직접 선택자4</h5>
+    <h1 id="h1txt">종속 선택자 아이디</h1>
+    <h1 class="h1class">종속 선택자 클래스</h1>
+</body>
+</html>
