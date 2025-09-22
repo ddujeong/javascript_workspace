@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            var arr1 = [
+                {"area":"서울", "name":"무대리"},
+                {"area":"부산", "name":"홍과장"},
+                {"area":"대전", "name":"박사장"},
+                {"area":"서울", "name":"빅마마"}
+            ]
+            
+            var resultArr1 = $.map(arr1, function(a,b){
+                if(a.area == "서울"){
+                    return a; // 서울인 요소만 새 배열에 포함(원래 객체는 그대로)
+                }
+                // 조건에 맞는 값만 return 하여 새 배열을 만듦
+                // 조건에 맞지 않으면 배열에 포함 XX
+            });
+            console.log(resultArr1);
+
+            var resultArr2 = $.grep(arr1, function(a,b){
+                if(a.area == "서울"){
+                    return true;
+                } else{
+                    return false;
+                }
+                // 조건식이 true인 요소만 새 배열로 반환
+            });
+            console.log(resultArr2);
+
+            var numbers = [1,2,3,4,5];
+
+            var result1 = $.map(numbers, function(number){ // 새 배열 반환
+                return number * 2;
+            });
+            console.log(result1);
+            // [2, 4, 6, 8, 10]
+
+            var result2 = $.grep(numbers,function(number){ // 조건식에 맞는 조건만 걸러서 새 배열로 반환(값 변형 불가)
+                return number % 2 == 0;
+                // return number * 2; => 불가
+            });
+            console.log(result2);
+            // [2, 4]
+
+            $(function(){
+                var arr2 = ["서울","대전","부산","전주"];
+                var arr3 = ["한국","미국","일본","중국"];
+                var obj = {
+                    "name" : "정부장",
+                    "area" : "서울"
+                } // 자바의 클래스로 선언한 객체
+                var idxNum = $.inArray("부산", arr2);
+                // 해당값의 인덱스 번호를 반환 (2)
+                // 없으면 -1 반환
+                console.log(idxNum);
+                var okArray1 = $.isArray(arr2);
+                // 배열 여부 확인 -> 베열이면 (true)
+                var okArray2 = $.isArray(obj);
+                // 베열 여부 확인 -> 배열이 아니면 (false)
+                console.log(okArray1);
+                console.log(okArray2);
+
+                var idxNum2 = $("li").index($("#list3"));
+                console.log(idxNum2);
+                // 해당 요소의 인덱스 반환(2)
+
+                $.merge(arr3, arr2); // 왼쪽 배열 순서대로 배열 병합
+                console.log(arr3);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li id="list3">내용3</li>
+        <li>내용4</li>
+    </ul>
+    <ul id="menu2">
+        <li>내용5</li>
+        <li>내용6</li>
+        <li>내용7</li>
+    </ul>
+</body>
+</html>

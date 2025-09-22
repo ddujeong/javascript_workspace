@@ -15,6 +15,16 @@
            // 아이디가 txt2인 요소의 바로 다음 요소 지정
             $(".txt2").next().css("border","2px dashed blue");
            // == $(".txt2 + p").css("border","2px dashed blue");
+            $(".txt2").next().next().css("border","2px dashed pink");
+           // 아이디가 txt2인 요소의 다음 다음 요소 지정
+        });
+        $(function(){
+            $(".txt6").prevAll().css("border","2px dashed yellow");
+            // 아이디가 txt6 기준으로 이전의 모든 요소들 지정
+            $(".txt6").nextAll().css("border","2px dashed gray");
+            // 아이디가 txt6 기준으로 이후의 모든 요소들 지정
+            $(".txt6").siblings().css("border","2px dashed gold");
+            // 아이디가 txt6 의 모든 형제요소들 지정
         });
     </script>
 </head>
@@ -25,6 +35,13 @@
         <p class="txt2">내용2</p>
         <p>내용3</p>
         <p>내용4</p>
+    </div>
+    <div id="wrap2">
+        <h1>인접 관계 선택자2</h1>
+        <p>내용5</p>
+        <p class="txt6">내용6</p>
+        <p>내용7</p>
+        <p>내용8</p>
     </div>
 </body>
 </html>
