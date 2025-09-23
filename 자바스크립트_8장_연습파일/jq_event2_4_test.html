@@ -5,7 +5,30 @@
 <title> 이벤트 </title>  
 <script src="js/jquery.js"></script>
 <script>
-$(function(){
+$(function(){ // 키보드 방향키의 키코드를 이용해 value 값으로 입력
+	$(document).on("keydown",keyEventFcn);
+	function keyEventFcn(e){
+		var direct = "";
+
+		switch (e.keyCode) {
+			case 37:
+				direct = "LEFT";
+				break;
+			case 38:
+				direct = "TOP";
+				break;
+			case 39:
+				direct = "RIGHT";
+				break;
+			case 40:
+				direct = "BOTTOM";
+				break;
+			case 13:
+				direct = "ENTER";
+				break;
+		}
+		if (direct) $("#user_id").val(direct);
+	}
 
 });
 </script>

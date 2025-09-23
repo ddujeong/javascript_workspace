@@ -6,7 +6,18 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function(){
-
+	$("#user_id_1,#user_pw_1").on("focus",function(){ // 포커스가 입력요소로 이동 할 때 발생하는 이벤트
+		$(this).css("background-color", "pink");
+	});
+	$("#user_id_1,#user_pw_1").on("blur",function(){
+		$(this).css("background", "none");
+	});
+	$("#frm_2").on("focusin",function(){// 폼의 하위요소 중 입력요소에 포커스가 잡힐 때 발생하는 이벤트
+		$(this).css("background-color", "pink");
+	});
+	$("#frm_2").on("focusout",function(){ // 하위요소 중 입력요소에서 포커스가 다시 외부 요소로 이동 할 때 발생하는 이벤트
+		$(this).css("background", "none");
+	});
 });
 </script>
 </head>

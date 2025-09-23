@@ -6,7 +6,20 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function(){
-	
+	$("#btn1").data("text", "javascript").on({ // 키보드 접근성(focus)은 없음
+		"mouseover" : overFnc,
+		"mouseout" : outFnc
+	});
+	 $("#btn2").data("text","welcome!").on({ // 마우스(mouseover)와 키보드 접근성(focus) 둘다 가짐
+ 		"mouseover focus": overFnc,
+ 		"mouseout blur": outFnc
+ });
+	function overFnc(){
+		$(".txt").text($(this).data("text"));
+	}
+	function outFnc(){
+		$(".txt").text("");
+	}
 });
 </script>
 </head>

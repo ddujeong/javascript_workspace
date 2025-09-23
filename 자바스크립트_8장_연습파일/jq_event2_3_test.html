@@ -6,7 +6,10 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function(){
-
+	$("#rel_site").on("change",function(){
+		$(".txt").text($(this).val());
+		// 선택된 옵션의 value 값을 txt 에 찍어주기
+	});
 });
 </script>
 </head>
