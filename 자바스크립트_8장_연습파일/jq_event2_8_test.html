@@ -6,7 +6,26 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function(){
+	$(".btn_1").on("mouseover", function(){
+		alert("HELLO!");
+	});
+	$(document).on("mouseover", ".btn_2", function(){
+		alert("WELCOME!");
+	});
+	// 버튼 2 생성
+	var btn_2 = $("<p><button class=\"btn_2\">버튼2</button></p>");
+	$("#wrap").append(btn_2);
 
+	// 버튼에 등록 된 이벤트 해지 
+
+	// 기본 등록 방식 해지
+	$(".del_1").on("click", function(){
+		$(".btn_1").off("mouseover");
+	});
+	// 라이브 이벤트 등록 방식 해지
+	$(".del_2").on("click", function(){
+		$(document).off("mouseover", ".btn_2");
+	});
 });
 </script>
 </head>
