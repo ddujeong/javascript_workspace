@@ -6,7 +6,10 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function( ) {
-
+    $(document).on("mousemove", function(e){ // 마우스 포인터의 좌표를 화면에 찍어줌
+        $(".posX").text(e.pageX); // 마우스 포인터의 X좌표
+        $(".posY").text(e.pageY); // 마우스 포인터의 Y좌표
+    });
 });
 </script>
 </head>

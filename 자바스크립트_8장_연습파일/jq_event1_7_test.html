@@ -6,20 +6,27 @@
 <script src="js/jquery.js"></script>
 <script>
 $(function( ) {
-
+	$("#box_1").on("mouseout", function(){
+		$("#box_1").css("background-color","yellow");
+		// #box_1에서 마우스가 떨어질 때 (자식 요소(<p/>) 위에서도 발생) 
+	});
+	$("#box_2").on("mouseleave", function(){
+		$("#box_2").css("background-color","pink");
+		// #box_2에서 마우스가 완전히 떨어질 때 (자식 요소(<p/>) 위에서는 발생하지 않음)
+	});
 });
 </script>
 </head>
 <body>
 <h1>mouseout</h1>
-<div id="box_1">
+<div id="box_1" style="border: 1px solid red;">
 				<p><a href="#">내용1</a></p>
 				<p><a href="#">내용2</a></p>
 				<p><a href="#">내용3</a></p>
 </div>
 
 <h1>mouseleave</h1>
-<div id="box_2">
+<div id="box_2" style="border: 1px solid blue;">
 				<p><a href="#">내용4</a></p>
 				<p><a href="#">내용5</a></p>
 				<p><a href="#">내용6</a></p>
