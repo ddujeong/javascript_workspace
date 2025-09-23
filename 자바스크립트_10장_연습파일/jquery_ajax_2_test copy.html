@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Ajax </title>
+<script src="js/jquery.js"></script>
+<script>
+$(function() {
+	$.ajax({
+    url:"js/LIST.json",
+    dataType:"json",
+    success:function(data){
+      if(data.length > 0){
+        var tb = $("<table />");
+        for(var i in data){ // i in = 인덱스(0 ~ 99)
+          var $userId = data[i].userId;
+          var $id = data[i].id;
+          var $title = data[i].title;
+          var $body = data[i].body;
+
+          var row = $("<tr />").append(
+            $("<td />").text($userId),
+            $("<td />").text($id),
+            $("<td />").text($title),
+            $("<td />").text($body),
+          );
+          tb.append(row); // <table /> 태그에 <tr /> 태그 넣기
+        }
+        $(".wrap").append(tb);
+      }
+    }
+  });
+});
+</script>
+</head>
+<body>
+	<div class="wrap"></div>
+</body>
+</html>
